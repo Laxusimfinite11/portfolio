@@ -11,7 +11,7 @@ import { toast } from 'sonner';
 import { Toaster } from './components/ui/sonner';
 import profileImage from './assets/40c1c4e5f84807ff0bc7b39aef702da935373c4c.png';
 
-type PaldScreen = {
+type ProjectScreen = {
   title: string;
   image: string;
 };
@@ -22,13 +22,14 @@ type Project = {
   image: string;
   demoUrl?: string;
   codeUrl?: string;
-  gallery?: PaldScreen[];
+  gallery?: ProjectScreen[];
+  techStack?: string[];
 };
 
 const paldDescription =
   'PALD Portal is a role-based event registration and management system built for handling delegate sign-ups, payment verification, QR ticketing, and attendance tracking in one streamlined platform. It helps admins, staff, and participants manage church events more efficiently through a secure and organized digital workflow.';
 
-const paldScreens: PaldScreen[] = [
+const paldScreens: ProjectScreen[] = [
   {
     title: 'Super Admin Dashboard',
     image: '/projects/pald/admin-dashboard.png',
@@ -67,45 +68,130 @@ const paldScreens: PaldScreen[] = [
   },
 ];
 
+const paldTechStack = ['Laravel', 'Postman', 'React', 'Django', 'Herd'];
+
+const cremaDescription =
+  'CremaPOS is a coffee shop point-of-sale system built with Laravel, Inertia.js, and React. It streamlines daily cafe operations with features for order processing, product and category management, inventory tracking, staff management, sales reporting, and receipt generation.';
+
+const cremaScreens: ProjectScreen[] = [
+  {
+    title: 'Point of Sale',
+    image: '/projects/crema/point-of-sale.png',
+  },
+  {
+    title: 'Dashboard',
+    image: '/projects/crema/dashboard.png',
+  },
+  {
+    title: 'Product Management',
+    image: '/projects/crema/products.png',
+  },
+  {
+    title: 'Category Management',
+    image: '/projects/crema/categories.png',
+  },
+  {
+    title: 'Order History',
+    image: '/projects/crema/orders.png',
+  },
+  {
+    title: 'Sales Analytics',
+    image: '/projects/crema/sales-analytics.png',
+  },
+  {
+    title: 'Staff Management',
+    image: '/projects/crema/staff.png',
+  },
+  {
+    title: 'Activity Logs',
+    image: '/projects/crema/activity-logs.png',
+  },
+  {
+    title: 'System Settings',
+    image: '/projects/crema/settings.png',
+  },
+  {
+    title: 'Staff Login',
+    image: '/projects/crema/staff-login.png',
+  },
+  {
+    title: 'Admin Login',
+    image: '/projects/crema/admin-login.png',
+  },
+];
+
+const cremaTechStack = ['Laravel', 'Inertia.js', 'React'];
+
+const unangHakbangDescription =
+  'A nonprofit preschool website for Unang Hakbang sa Pangarap that highlights its mission of providing culturally grounded early education for indigenous children in Southern Palawan. Built with Laravel, the site features donation and volunteer forms, news and gallery pages, testimonials, and an admin dashboard for managing content and community engagement.';
+
+const unangHakbangScreens: ProjectScreen[] = [
+  {
+    title: 'Home Page',
+    image: '/projects/unang-hakbang/home.png',
+  },
+  {
+    title: 'Donate Form',
+    image: '/projects/unang-hakbang/donate.png',
+  },
+  {
+    title: 'Volunteer Form',
+    image: '/projects/unang-hakbang/volunteer.png',
+  },
+  {
+    title: 'Our Journey',
+    image: '/projects/unang-hakbang/about-journey.png',
+  },
+  {
+    title: 'Vision and Mission',
+    image: '/projects/unang-hakbang/about-impact.png',
+  },
+  {
+    title: 'How We Make a Difference',
+    image: '/projects/unang-hakbang/home-difference.png',
+  },
+  {
+    title: 'Living Legacy',
+    image: '/projects/unang-hakbang/home-legacy.png',
+  },
+  {
+    title: 'Call to Action',
+    image: '/projects/unang-hakbang/home-call-to-action.png',
+  },
+];
+
+const unangHakbangTechStack = ['Laravel'];
+
 const projects: Project[] = [
-  {
-    title: 'Modern Portfolio Website',
-    description:
-      'A sleek, responsive portfolio with smooth animations and modern design principles.',
-    image: 'https://images.unsplash.com/photo-1758598303946-385680e4eabd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjB3ZWIlMjBkZXNpZ24lMjBpbnRlcmZhY2UlMjBtb2NrdXB8ZW58MXx8fHwxNzY5NjcwMTYzfDA&ixlib=rb-4.1.0&q=80&w=1080',
-    demoUrl: '#',
-    codeUrl: '#',
-  },
-  {
-    title: 'E-Commerce Platform',
-    description:
-      'Full-featured online store with cart, checkout, and product management.',
-    image: 'https://images.unsplash.com/photo-1644984875410-e11486d2b94f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlY29tbWVyY2UlMjB3ZWJzaXRlJTIwc2hvcHBpbmclMjBpbnRlcmZhY2V8ZW58MXx8fHwxNzY5NjU0ODUwfDA&ixlib=rb-4.1.0&q=80&w=1080',
-    demoUrl: '#',
-    codeUrl: '#',
-  },
-  {
-    title: 'Dashboard Analytics',
-    description:
-      'Interactive data visualization dashboard with real-time updates and insights.',
-    image: 'https://images.unsplash.com/photo-1767449441925-737379bc2c4d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2JpbGUlMjBhcHAlMjBkYXNoYm9hcmQlMjBpbnRlcmZhY2V8ZW58MXx8fHwxNzY5NjA2NzQxfDA&ixlib=rb-4.1.0&q=80&w=1080',
-    demoUrl: '#',
-    codeUrl: '#',
-  },
   {
     title: 'PALD Online Website',
     description: paldDescription,
     image: paldScreens[0].image,
     gallery: paldScreens,
+    techStack: paldTechStack,
+  },
+  {
+    title: 'Crema POS',
+    description: cremaDescription,
+    image: cremaScreens[0].image,
+    gallery: cremaScreens,
+    techStack: cremaTechStack,
+  },
+  {
+    title: 'Unang Hakbang',
+    description: unangHakbangDescription,
+    image: unangHakbangScreens[0].image,
+    gallery: unangHakbangScreens,
+    techStack: unangHakbangTechStack,
   },
 ];
 
 export default function App() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activePaldSlide, setActivePaldSlide] = useState(0);
-  const [selectedPaldSlide, setSelectedPaldSlide] = useState(0);
-  const [paldGalleryOpen, setPaldGalleryOpen] = useState(false);
+  const [activeProjectSlides, setActiveProjectSlides] = useState<Record<string, number>>({});
+  const [galleryProjectIndex, setGalleryProjectIndex] = useState<number | null>(null);
+  const [selectedGallerySlide, setSelectedGallerySlide] = useState(0);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -123,7 +209,17 @@ export default function App() {
 
   useEffect(() => {
     const interval = window.setInterval(() => {
-      setActivePaldSlide((current) => (current + 1) % paldScreens.length);
+      setActiveProjectSlides((current) => (
+        projects.reduce<Record<string, number>>((nextSlides, project) => {
+          if (!project.gallery?.length) {
+            return nextSlides;
+          }
+
+          const currentSlide = current[project.title] ?? 0;
+          nextSlides[project.title] = (currentSlide + 1) % project.gallery.length;
+          return nextSlides;
+        }, { ...current })
+      ));
     }, 3500);
 
     return () => window.clearInterval(interval);
@@ -136,8 +232,8 @@ export default function App() {
         return;
       }
 
-      if (paldGalleryOpen) {
-        setPaldGalleryOpen(false);
+      if (galleryProjectIndex !== null) {
+        setGalleryProjectIndex(null);
         return;
       }
 
@@ -148,7 +244,7 @@ export default function App() {
 
     window.addEventListener('keydown', handleEscape);
     return () => window.removeEventListener('keydown', handleEscape);
-  }, [mobileMenuOpen, paldGalleryOpen]);
+  }, [galleryProjectIndex, mobileMenuOpen]);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -190,25 +286,54 @@ export default function App() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const openPaldGallery = (index = activePaldSlide) => {
-    setSelectedPaldSlide(index);
-    setPaldGalleryOpen(true);
+  const galleryProject = galleryProjectIndex === null ? null : projects[galleryProjectIndex];
+  const galleryScreens = galleryProject?.gallery ?? [];
+  const selectedGalleryScreen = galleryScreens[selectedGallerySlide] ?? galleryScreens[0];
+
+  const openProjectGallery = (projectIndex: number, slideIndex: number) => {
+    setSelectedGallerySlide(slideIndex);
+    setGalleryProjectIndex(projectIndex);
   };
 
-  const movePaldPreview = (direction: number) => {
-    setActivePaldSlide((current) => {
-      const next = (current + direction + paldScreens.length) % paldScreens.length;
-      return next;
+  const closeProjectGallery = () => {
+    setGalleryProjectIndex(null);
+    setSelectedGallerySlide(0);
+  };
+
+  const setProjectPreviewSlide = (project: Project, slideIndex: number) => {
+    setActiveProjectSlides((current) => ({
+      ...current,
+      [project.title]: slideIndex,
+    }));
+  };
+
+  const moveProjectPreview = (project: Project, direction: number) => {
+    const galleryLength = project.gallery?.length ?? 0;
+
+    if (!galleryLength) {
+      return;
+    }
+
+    setActiveProjectSlides((current) => {
+      const currentSlide = current[project.title] ?? 0;
+      return {
+        ...current,
+        [project.title]: (
+          currentSlide + direction + galleryLength
+        ) % galleryLength,
+      };
     });
   };
 
-  const moveSelectedPaldSlide = (direction: number) => {
-    setSelectedPaldSlide((current) => (
-      current + direction + paldScreens.length
-    ) % paldScreens.length);
-  };
+  const moveSelectedGallerySlide = (direction: number) => {
+    if (!galleryScreens.length) {
+      return;
+    }
 
-  const selectedPaldScreen = paldScreens[selectedPaldSlide];
+    setSelectedGallerySlide((current) => (
+      current + direction + galleryScreens.length
+    ) % galleryScreens.length);
+  };
 
   return (
     <div className="dark h-screen w-screen overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-foreground select-none flex flex-col">
@@ -339,7 +464,7 @@ export default function App() {
         </section>
 
         {/* Tech Stack Section */}
-        <section className="h-full min-h-screen flex items-center justify-center py-12 sm:py-16 lg:py-20 px-4 sm:px-6 snap-start shrink-0">
+        <section className="h-full min-h-screen overflow-y-auto scrollbar-none flex items-start lg:items-center justify-center py-24 lg:py-20 px-4 sm:px-6 snap-start shrink-0">
           <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -359,16 +484,20 @@ export default function App() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-3 sm:gap-4 lg:gap-6"
+              className="mx-auto grid max-w-6xl grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 lg:gap-5"
             >
               {[
                 { name: 'HTML5', icon: '🌐' },
                 { name: 'CSS3', icon: '🎨' },
                 { name: 'JavaScript', icon: '⚡' },
                 { name: 'React', icon: '⚛️' },
+                { name: 'Laravel', icon: 'L' },
+                { name: 'Django', icon: 'D' },
                 { name: 'Next.js', icon: '▲' },
                 { name: 'Tailwind CSS', icon: '🎯' },
                 { name: 'Node.js', icon: '💚' },
+                { name: 'Postman', icon: 'API' },
+                { name: 'Herd', icon: 'H' },
               ].map((tech, index) => (
                 <motion.div
                   key={tech.name}
@@ -390,7 +519,7 @@ export default function App() {
         </section>
 
         {/* Services Section */}
-        <section id="services" className="h-full min-h-screen flex items-center justify-center py-20 px-6 snap-start shrink-0">
+        <section id="services" className="h-full min-h-screen overflow-y-auto scrollbar-none flex items-start lg:items-center justify-center py-24 lg:py-20 px-6 snap-start shrink-0">
           <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -457,8 +586,8 @@ export default function App() {
         </section>
 
         {/* Projects Section */}
-        <section id="projects" className="h-full min-h-screen flex items-center justify-center py-20 px-6 snap-start shrink-0">
-          <div className="max-w-7xl mx-auto">
+        <section id="projects" className="h-full min-h-screen overflow-y-auto scrollbar-none flex items-start lg:items-center justify-center py-24 lg:py-20 px-6 snap-start shrink-0">
+          <div className="mx-auto w-full max-w-[88rem]">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -472,10 +601,11 @@ export default function App() {
               </p>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+            <div className="mx-auto mb-10 grid grid-cols-[repeat(auto-fit,minmax(min(100%,28rem),28rem))] justify-center gap-6">
               {projects.map((project, index) => {
-                const isPaldProject = Boolean(project.gallery);
-                const currentPaldScreen = project.gallery?.[activePaldSlide];
+                const hasGallery = Boolean(project.gallery?.length);
+                const activeSlide = activeProjectSlides[project.title] ?? 0;
+                const currentProjectScreen = project.gallery?.[activeSlide] ?? project.gallery?.[0];
 
                 return (
                   <motion.div
@@ -487,18 +617,18 @@ export default function App() {
                     className="group relative bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden hover:border-blue-500/30 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-300"
                   >
                     <div
-                      className={`relative h-52 overflow-hidden ${isPaldProject ? 'cursor-pointer' : ''}`}
+                      className={`relative h-52 overflow-hidden ${hasGallery ? 'cursor-pointer' : ''}`}
                       onClick={() => {
-                        if (isPaldProject) {
-                          openPaldGallery(activePaldSlide);
+                        if (hasGallery) {
+                          openProjectGallery(index, activeSlide);
                         }
                       }}
                     >
-                      {isPaldProject && currentPaldScreen ? (
+                      {hasGallery && currentProjectScreen ? (
                         <>
                           <AnimatePresence mode="wait">
                             <motion.div
-                              key={currentPaldScreen.image}
+                              key={currentProjectScreen.image}
                               initial={{ opacity: 0, scale: 1.04 }}
                               animate={{ opacity: 1, scale: 1 }}
                               exit={{ opacity: 0, scale: 0.98 }}
@@ -506,26 +636,26 @@ export default function App() {
                               className="absolute inset-0"
                             >
                               <ImageWithFallback
-                                src={currentPaldScreen.image}
-                                alt={currentPaldScreen.title}
+                                src={currentProjectScreen.image}
+                                alt={currentProjectScreen.title}
                                 className="w-full h-full object-cover object-left-top transition-transform duration-500 group-hover:scale-105"
                               />
                             </motion.div>
                           </AnimatePresence>
                           <div className="absolute left-3 bottom-3 max-w-[calc(100%-5rem)] rounded-full bg-slate-950/85 px-3 py-1.5 text-xs font-medium text-white shadow-lg backdrop-blur-sm">
-                            {currentPaldScreen.title}
+                            {currentProjectScreen.title}
                           </div>
                           <div className="absolute right-3 bottom-3 flex items-center gap-1.5">
-                            {paldScreens.map((screen, screenIndex) => (
+                            {project.gallery?.map((screen, screenIndex) => (
                               <button
                                 key={screen.title}
                                 type="button"
                                 aria-label={`Show ${screen.title}`}
                                 onClick={(e) => {
                                   e.stopPropagation();
-                                  setActivePaldSlide(screenIndex);
+                                  setProjectPreviewSlide(project, screenIndex);
                                 }}
-                                className={`h-2 rounded-full transition-all ${screenIndex === activePaldSlide
+                                className={`h-2 rounded-full transition-all ${screenIndex === activeSlide
                                   ? 'w-5 bg-blue-400'
                                   : 'w-2 bg-white/60 hover:bg-white'
                                   }`}
@@ -534,10 +664,10 @@ export default function App() {
                           </div>
                           <button
                             type="button"
-                            aria-label="Previous PALD screenshot"
+                            aria-label={`Previous ${project.title} screenshot`}
                             onClick={(e) => {
                               e.stopPropagation();
-                              movePaldPreview(-1);
+                              moveProjectPreview(project, -1);
                             }}
                             className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-slate-950/70 p-2 text-white opacity-0 shadow-lg backdrop-blur-sm transition-opacity hover:bg-slate-900 group-hover:opacity-100"
                           >
@@ -545,10 +675,10 @@ export default function App() {
                           </button>
                           <button
                             type="button"
-                            aria-label="Next PALD screenshot"
+                            aria-label={`Next ${project.title} screenshot`}
                             onClick={(e) => {
                               e.stopPropagation();
-                              movePaldPreview(1);
+                              moveProjectPreview(project, 1);
                             }}
                             className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-slate-950/70 p-2 text-white opacity-0 shadow-lg backdrop-blur-sm transition-opacity hover:bg-slate-900 group-hover:opacity-100"
                           >
@@ -563,13 +693,13 @@ export default function App() {
                         />
                       )}
                       <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
-                        {isPaldProject ? (
+                        {hasGallery ? (
                           <Button
                             size="sm"
                             className="bg-blue-500 hover:bg-blue-600 text-white border-0"
                             onClick={(e) => {
                               e.stopPropagation();
-                              openPaldGallery(activePaldSlide);
+                              openProjectGallery(index, activeSlide);
                             }}
                           >
                             <Images className="h-4 w-4 mr-2" />
@@ -605,12 +735,24 @@ export default function App() {
                       <p className="text-sm text-foreground/60 leading-relaxed">
                         {project.description}
                       </p>
-                      {isPaldProject && (
+                      {project.techStack && (
+                        <div className="mt-4 flex flex-wrap gap-2">
+                          {project.techStack.map((tech) => (
+                            <span
+                              key={tech}
+                              className="rounded-full border border-blue-400/20 bg-blue-400/10 px-2.5 py-1 text-xs font-medium text-blue-200"
+                            >
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                      )}
+                      {hasGallery && (
                         <Button
                           size="sm"
                           variant="outline"
                           className="mt-4 w-full border-white/10 bg-white/5 hover:bg-white/10"
-                          onClick={() => openPaldGallery(activePaldSlide)}
+                          onClick={() => openProjectGallery(index, activeSlide)}
                         >
                           <Images className="h-4 w-4 mr-2" />
                           View Project Screens
@@ -622,19 +764,21 @@ export default function App() {
               })}
             </div>
 
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="flex justify-center"
-            >
-              <Button
-                variant="outline"
-                className="border-white/10 hover:border-white/20 bg-white/5 hover:bg-white/10 backdrop-blur-sm transition-all duration-300 hover:scale-105"
+            {projects.length > 1 && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                className="flex justify-center"
               >
-                View All Projects <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </motion.div>
+                <Button
+                  variant="outline"
+                  className="border-white/10 hover:border-white/20 bg-white/5 hover:bg-white/10 backdrop-blur-sm transition-all duration-300 hover:scale-105"
+                >
+                  View All Projects <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </motion.div>
+            )}
           </div>
         </section>
 
@@ -811,9 +955,9 @@ export default function App() {
         </div>
       </main>
 
-      {/* PALD Gallery */}
+      {/* Project Gallery */}
       <AnimatePresence>
-        {paldGalleryOpen && (
+        {galleryProject && selectedGalleryScreen && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -822,8 +966,8 @@ export default function App() {
             className="fixed inset-0 z-[70] overflow-y-auto bg-slate-950/90 px-4 py-6 backdrop-blur-xl sm:px-6"
             role="dialog"
             aria-modal="true"
-            aria-label="PALD Online Website project screenshots"
-            onClick={() => setPaldGalleryOpen(false)}
+            aria-label={`${galleryProject.title} project screenshots`}
+            onClick={closeProjectGallery}
           >
             <motion.div
               initial={{ opacity: 0, y: 24, scale: 0.98 }}
@@ -835,8 +979,8 @@ export default function App() {
             >
               <button
                 type="button"
-                aria-label="Close PALD gallery"
-                onClick={() => setPaldGalleryOpen(false)}
+                aria-label={`Close ${galleryProject.title} gallery`}
+                onClick={closeProjectGallery}
                 className="absolute right-4 top-4 z-10 rounded-full bg-white/10 p-2 text-white transition-colors hover:bg-white/20"
               >
                 <X className="h-5 w-5" />
@@ -847,7 +991,7 @@ export default function App() {
                   <div className="relative overflow-hidden rounded-xl border border-white/10 bg-slate-950">
                     <AnimatePresence mode="wait">
                       <motion.div
-                        key={selectedPaldScreen.image}
+                        key={selectedGalleryScreen.image}
                         initial={{ opacity: 0, x: 24 }}
                         animate={{ opacity: 1, x: 0 }}
                         exit={{ opacity: 0, x: -24 }}
@@ -855,28 +999,28 @@ export default function App() {
                         className="relative aspect-video"
                       >
                         <ImageWithFallback
-                          src={selectedPaldScreen.image}
-                          alt={selectedPaldScreen.title}
+                          src={selectedGalleryScreen.image}
+                          alt={selectedGalleryScreen.title}
                           className="h-full w-full object-contain"
                         />
                         <div className="absolute left-4 top-4 rounded-full bg-slate-950/85 px-4 py-2 text-sm font-semibold text-white shadow-lg backdrop-blur-sm">
-                          {selectedPaldScreen.title}
+                          {selectedGalleryScreen.title}
                         </div>
                       </motion.div>
                     </AnimatePresence>
 
                     <button
                       type="button"
-                      aria-label="Previous PALD gallery screen"
-                      onClick={() => moveSelectedPaldSlide(-1)}
+                      aria-label={`Previous ${galleryProject.title} gallery screen`}
+                      onClick={() => moveSelectedGallerySlide(-1)}
                       className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-slate-950/80 p-3 text-white shadow-lg transition-colors hover:bg-slate-900"
                     >
                       <ChevronLeft className="h-5 w-5" />
                     </button>
                     <button
                       type="button"
-                      aria-label="Next PALD gallery screen"
-                      onClick={() => moveSelectedPaldSlide(1)}
+                      aria-label={`Next ${galleryProject.title} gallery screen`}
+                      onClick={() => moveSelectedGallerySlide(1)}
                       className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-slate-950/80 p-3 text-white shadow-lg transition-colors hover:bg-slate-900"
                     >
                       <ChevronRight className="h-5 w-5" />
@@ -884,13 +1028,13 @@ export default function App() {
                   </div>
 
                   <div className="flex flex-wrap items-center justify-center gap-2">
-                    {paldScreens.map((screen, screenIndex) => (
+                    {galleryScreens.map((screen, screenIndex) => (
                       <button
                         key={screen.title}
                         type="button"
                         aria-label={`Open ${screen.title}`}
-                        onClick={() => setSelectedPaldSlide(screenIndex)}
-                        className={`h-2.5 rounded-full transition-all ${screenIndex === selectedPaldSlide
+                        onClick={() => setSelectedGallerySlide(screenIndex)}
+                        className={`h-2.5 rounded-full transition-all ${screenIndex === selectedGallerySlide
                           ? 'w-8 bg-blue-400'
                           : 'w-2.5 bg-white/30 hover:bg-white/70'
                           }`}
@@ -905,20 +1049,32 @@ export default function App() {
                       Project Gallery
                     </p>
                     <h3 className="text-2xl font-bold text-white">
-                      PALD Online Website
+                      {galleryProject.title}
                     </h3>
                     <p className="mt-3 text-sm leading-relaxed text-white/60">
-                      {paldDescription}
+                      {galleryProject.description}
                     </p>
+                    {galleryProject.techStack && (
+                      <div className="mt-4 flex flex-wrap gap-2">
+                        {galleryProject.techStack.map((tech) => (
+                          <span
+                            key={tech}
+                            className="rounded-full border border-blue-400/20 bg-blue-400/10 px-3 py-1 text-xs font-medium text-blue-200"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    )}
                   </div>
 
                   <div className="grid max-h-[440px] gap-3 overflow-y-auto pr-1 scrollbar-none sm:grid-cols-2 lg:grid-cols-1">
-                    {paldScreens.map((screen, screenIndex) => (
+                    {galleryScreens.map((screen, screenIndex) => (
                       <button
                         key={screen.title}
                         type="button"
-                        onClick={() => setSelectedPaldSlide(screenIndex)}
-                        className={`group overflow-hidden rounded-xl border text-left transition-all ${screenIndex === selectedPaldSlide
+                        onClick={() => setSelectedGallerySlide(screenIndex)}
+                        className={`group overflow-hidden rounded-xl border text-left transition-all ${screenIndex === selectedGallerySlide
                           ? 'border-blue-400 bg-blue-500/10'
                           : 'border-white/10 bg-white/5 hover:border-white/25 hover:bg-white/10'
                           }`}
