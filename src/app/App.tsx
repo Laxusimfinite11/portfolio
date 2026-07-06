@@ -26,6 +26,53 @@ type Project = {
   techStack?: string[];
 };
 
+const techStackItems = [
+  {
+    name: 'HTML5',
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg',
+  },
+  {
+    name: 'CSS3',
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg',
+  },
+  {
+    name: 'JavaScript',
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg',
+  },
+  {
+    name: 'React',
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg',
+  },
+  {
+    name: 'Laravel',
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg',
+  },
+  {
+    name: 'Django',
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg',
+  },
+  {
+    name: 'Next.js',
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg',
+  },
+  {
+    name: 'Tailwind CSS',
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg',
+  },
+  {
+    name: 'Node.js',
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg',
+  },
+  {
+    name: 'Postman',
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg',
+  },
+  {
+    name: 'Herd',
+    logo: 'https://herd.laravel.com/favicon.ico',
+  },
+];
+
 const paldDescription =
   'PALD Portal is a role-based event registration and management system built for handling delegate sign-ups, payment verification, QR ticketing, and attendance tracking in one streamlined platform. It helps admins, staff, and participants manage church events more efficiently through a secure and organized digital workflow.';
 
@@ -436,13 +483,14 @@ export default function App() {
                 </span>
               </h1>
               <p className="text-lg sm:text-xl text-foreground/70">
-                Web Developer & Computer Science Student
+                Web Developer & Computer Science Graduate
               </p>
               <p className="text-sm sm:text-base text-foreground/60 leading-relaxed max-w-xl mx-auto lg:mx-0">
-                Fourth-year Bachelor of Science in Computer Science student at Palawan
-                State University. I specialize in building clean, functional, and
+                Bachelor of Science in Computer Science graduate from Palawan State
+                University. I specialize in building clean, functional, and
                 visually appealing web applications with a focus on modern UI design,
-                performance, and exceptional user experience.
+                performance, and exceptional user experience. I also have hands-on
+                experience building servers from old PCs to deploy websites and tools.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center lg:justify-start">
                 <Button
@@ -486,19 +534,7 @@ export default function App() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="mx-auto grid max-w-6xl grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 lg:gap-5"
             >
-              {[
-                { name: 'HTML5', icon: '🌐' },
-                { name: 'CSS3', icon: '🎨' },
-                { name: 'JavaScript', icon: '⚡' },
-                { name: 'React', icon: '⚛️' },
-                { name: 'Laravel', icon: 'L' },
-                { name: 'Django', icon: 'D' },
-                { name: 'Next.js', icon: '▲' },
-                { name: 'Tailwind CSS', icon: '🎯' },
-                { name: 'Node.js', icon: '💚' },
-                { name: 'Postman', icon: 'API' },
-                { name: 'Herd', icon: 'H' },
-              ].map((tech, index) => (
+              {techStackItems.map((tech, index) => (
                 <motion.div
                   key={tech.name}
                   initial={{ opacity: 0, scale: 0.8 }}
@@ -508,7 +544,14 @@ export default function App() {
                   whileHover={{ scale: 1.1, y: -5 }}
                   className="group relative bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm border border-white/10 rounded-xl sm:rounded-2xl p-4 sm:p-6 flex flex-col items-center justify-center gap-2 sm:gap-3 hover:border-blue-500/30 hover:shadow-lg hover:shadow-blue-500/10 transition-all duration-300 cursor-pointer"
                 >
-                  <div className="text-3xl sm:text-4xl">{tech.icon}</div>
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white p-2 shadow-sm sm:h-14 sm:w-14">
+                    <ImageWithFallback
+                      src={tech.logo}
+                      alt={`${tech.name} logo`}
+                      className="h-full w-full object-contain"
+                      loading="lazy"
+                    />
+                  </div>
                   <span className="text-xs sm:text-sm text-center text-foreground/70 group-hover:text-foreground transition-colors">
                     {tech.name}
                   </span>
